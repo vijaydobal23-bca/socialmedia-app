@@ -14,9 +14,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use(cookiePaseer());
+
+
 app.use(cors({
   credentials:true,
-  origin:true
+  origin:"https://socialmedia-app-three-delta.vercel.app",
+  methods:["GET","POST","PUT","DELETE"]
 }));
  
 app.get("/" ,(req ,res)=>{

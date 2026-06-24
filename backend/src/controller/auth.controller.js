@@ -41,7 +41,13 @@ async function registerController(req, res) {
     { expiresIn: "1d" },
   );
 
-  res.cookie("token", token);
+  const cookieOptions = {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  };
+
+  res.cookie("token", token, cookieOptions);
   res.status(201).json({
     message: "User Registerd sucesfully",
     user: {
@@ -84,7 +90,12 @@ async function loginController(req, res) {
     process.env.JWT_SECRET,
     { expiresIn: "1d" },
   );
-  res.cookie("token", token);
+  const cookieOptions = {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  };
+  res.cookie("token", token, cookieOptions);
 
   res.status(200).json({
     message: "User login sucessfully",
@@ -151,7 +162,11 @@ async function editProfile(req ,res){
 }
 
 async function logoutController(req, res) {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  });
   res.status(200).json({ message: "Logged out successfully" });
 }
 
