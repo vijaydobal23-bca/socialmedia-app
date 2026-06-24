@@ -1,0 +1,208 @@
+.feed-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+  }
+
+  .instagram-spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #a8a8a8;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .feed {
+    max-width: 24rem;
+    width: 100%;
+    margin: 0 auto;
+
+    .posts {
+      width: 100%;
+      display: flex;
+      gap: 0.25rem;
+      flex-direction: column;
+    }
+
+    .post {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+    
+      .image-container {
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+
+      .left-side {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .right-side {
+        cursor: pointer;
+        color: #262626;
+      }
+
+      .post-details {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .username {
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: #262626;
+        }
+
+        .dot {
+          color: #8e8e8e;
+          font-size: 0.5rem;
+        }
+
+        .followbtn {
+          background: transparent;
+          color: #0095f6;
+          border: none;
+          font-weight: 600;
+          font-size: 0.9rem;
+          cursor: pointer;
+          padding: 0;
+
+          &:hover {
+            color: #00376b;
+            background: transparent;
+          }
+
+          &:disabled {
+            color: #8e8e8e;
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      .img-wrapper {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        
+        img {
+          width: 2.2rem;
+          height: 2.2rem;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      margin-top: 0.2rem;
+
+      .left {
+        display: flex;
+        gap: 1rem;
+      }
+
+      button {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover svg {
+          color: #8e8e8e;
+        }
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #262626;
+        transition: color 0.2s ease;
+      }
+
+      .like {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .like.active {
+        animation: heartBurst 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        color: #ed4956;
+        fill: #ed4956;
+      }
+
+      @keyframes heartBurst {
+        0% { transform: scale(1); }
+        25% { transform: scale(1.2); }
+        50% { transform: scale(0.95); }
+        100% { transform: scale(1); }
+      }
+    }
+
+    .bottom {
+      padding: 0 1rem 1rem 1rem;
+
+      .likes-count {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #262626;
+        margin-bottom: 0.3rem;
+      }
+
+      .caption {
+        font-size: 0.9rem;
+        color: #262626;
+        line-height: 1.4;
+
+        .username {
+          font-weight: 600;
+          margin-right: 0.4rem;
+        }
+      }
+    }
+  }
+}

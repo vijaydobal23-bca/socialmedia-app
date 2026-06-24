@@ -1,0 +1,113 @@
+.search-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 60px);
+  background-color: #fafafa;
+  padding: 2rem;
+
+  .search-container {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 470px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #262626;
+      text-align: center;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #dbdbdb;
+      background-color: #efefef;
+      color: #262626;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      outline: none;
+      transition: all 0.2s;
+
+      &:focus {
+        border-color: #a8a8a8;
+        background-color: #fff;
+      }
+      
+      &::placeholder {
+        color: #8e8e8e;
+      }
+    }
+
+    .status-text {
+      text-align: center;
+      color: #8e8e8e;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .search-results {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+
+      .search-result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        
+        &:not(:last-child) {
+          border-bottom: 1px solid #efefef;
+        }
+
+        .user-info {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+
+          .profile-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #dbdbdb;
+          }
+
+          span {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #262626;
+          }
+        }
+
+        .followbtn {
+          background-color: #0095f6;
+          color: white;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 0.85rem;
+          cursor: pointer;
+          transition: background-color 0.2s;
+
+          &:hover {
+            background-color: #1877f2;
+          }
+
+          &:disabled {
+            background-color: #8e8e8e;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

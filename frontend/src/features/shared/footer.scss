@@ -1,0 +1,41 @@
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 24rem;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #dbdbdb;
+    z-index: 1000;
+  
+    .footer-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+      border-radius: 50%;
+      height:30px;
+      width:30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: rgb(250, 27, 27);
+        }
+  
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+  
+      &:hover {
+        color: #000;
+      }
+    }
+  }

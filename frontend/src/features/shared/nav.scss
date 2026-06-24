@@ -1,0 +1,56 @@
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 24em;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid #efefef;
+  z-index: 1000;
+  box-sizing: border-box;
+  height: 60px;
+
+  .instagram {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img.insta-text {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    p.insta-text {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0;
+      color: #262626;
+    }
+  }
+
+  .profile-image {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .profile-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #262626;
+    }
+  }
+}
