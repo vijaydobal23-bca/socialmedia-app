@@ -58,9 +58,12 @@ async function viewStoryController(req,res){
       })
     }    
 
-    const follows = await followModel.find({ follower: user.id });
-    const followingIds = follows.map(f => f.followee);
+    const follows = await followModel.find({ follower: user.username });
+    const followingUsernames = follows.map(f => f.followee);
     
+    const followingUsers = await userModel.find({ username: { $in: followingUsernames } });
+    const followingIds = followingUsers.map(u => u._id);
+
     // Include the user's own stories
     followingIds.push(user.id);
 
