@@ -20,10 +20,13 @@ const StoryFeed = () => {
     fileInputRef.current.click();
   };
 
-  const onFileChange = (e) => {
+  const onFileChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      handleUploadStory(file);
+      await handleUploadStory(file);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     }
   };
 

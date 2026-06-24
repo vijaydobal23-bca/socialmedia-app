@@ -23,11 +23,11 @@ const CreatePost = () => {
     )
   }
 
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault();
     const file = postImageInputFieldRef.current.files[0];
 
-    handleCreatePost(file,caption);
+    await handleCreatePost(file,caption);
     navigate("/")
 
   }

@@ -30,8 +30,9 @@ export const usePost = () => {
   const handleCreatePost = async (imageFile, caption) => {
     setLoading(true);
     try {
-      const data = await createPost(imageFile, caption);
-      setFeed([data.post, ...feed]);
+      await createPost(imageFile, caption);
+      await handleGetFeed();
+      await handleGetPosts();
     } catch (error) {
       console.error("Failed to create post", error);
     } finally {
