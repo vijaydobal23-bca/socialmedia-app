@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api/story",
+  baseURL: "https://socialmedia-app-9woe.onrender.com/api/story",
   withCredentials: true
 });
 
